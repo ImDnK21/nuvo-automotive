@@ -61,8 +61,11 @@ function setEmail($email){
 }
 
 public function getAll(){
-    $clientes = $this->db->query ("SELECT * FROM CLIENT ORDER BY id ASC");
+    $query = "SELECT * FROM CLIENT ORDER BY RUT ASC";
+    $clientes = $this->db->query ($query);
+    // die ($query);
     return $clientes;
+    
 }
 
 public function save(){
@@ -78,6 +81,5 @@ public function save(){
 
 
 }
-
 
 ?>
