@@ -21,9 +21,8 @@ body {
     position: relative;
 }
 
-.logo {
-    width: 20%;
-    height: 20%;
+.table-responsive {
+    width: max-content;
 }
 
 

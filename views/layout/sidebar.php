@@ -20,7 +20,7 @@
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="<?= APP_URL . 'admin/ViewList' ?>">Clientes </a>
-                                <a class="nav-link" href="<?= APP_URL . 'admin/dashboard' ?>">Mecanicos </a>
+                                <a class="nav-link" href="<?= APP_URL . 'admin/ViewListMechanic' ?>">Mecanicos </a>
                                 <a class="nav-link" href="<?= APP_URL . 'admin/dashboard' ?>">Vehiculos </a>
                             </nav>
                         </div>

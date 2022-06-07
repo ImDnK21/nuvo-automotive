@@ -4,9 +4,9 @@
       <img src="<?= APP_URL . 'assets/img/logo_x28.png' ?>" alt="<?= APP_NAME ?>" class="logo">
       Nuvo Automotive
     </a>
-    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Alternar navegación" class="navbar-toggler">
+    <!-- <button type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Alternar navegación" class="navbar-toggler">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> -->
     <button class="btn btn-link btn-sm order-1 order-lg-0 ms-3 me-4 me-lg-0" id="sidebarToggle" href="#!">
       <i class="fas fa-bars"></i>
     </button>
