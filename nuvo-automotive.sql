@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `client`
 --
 
+
 CREATE TABLE `client` (
   `RUT` varchar(255) NOT NULL,
   `FIRSTNAME` varchar(255) DEFAULT NULL,

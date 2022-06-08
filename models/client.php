@@ -38,7 +38,6 @@ function getPhone() {
 function getEmail() {
   return $this->email;
 }
-
 function getAddress() {
   return $this->address;
 }
@@ -46,7 +45,6 @@ function getAddress() {
 function getCommune() {
   return $this->commune;
 }
-
 function setRut($rut){
     $this->rut = $this->db->escape_string($rut);
 }
@@ -69,7 +67,6 @@ function setPhone($phone){
 function setEmail($email){
     $this->email = $this->db->escape_string($email);
 }
-
 function setAddress($address){
   $this->address = $this->db->escape_string($address);
 }
@@ -77,25 +74,31 @@ function setAddress($address){
 function setCommune($commune){
   $this->commune = $this->db->escape_string($commune);
 }
-
 public function getAll(){
     $query = "SELECT * FROM CLIENT ORDER BY RUT ASC";
     $clientes = $this->db->query ($query);
-    // die ($query);
+     //die ($query);
     return $clientes;
     
 }
 
-public function save(){
-    $query = "INSERT INTO CLIENT (RUT, FIRSTNAME, LASTNAME, SECOND_LASTNAME, PHONE, EMAIL, ADDRESS, COMMUNE) VALUES('{$this->getRut()}', '{$this->getFirstname()}', '{$this->getLastname()}', '{$this->getSecondLastname()}', '{$this->getPhone()}', '{$this->getEmail()}','{$this->getAddress()}','{$this->getCommune()}');";
+public function getByRut($rut){
+    $query = "SELECT * FROM CLIENT WHERE RUT = '$rut'";
+    $client = $this->db->query ($query);
+    return $client;
+}
 
-    $save = $this->db->query($query);
+public function save(){
+    $sql = "INSERT INTO CLIENT (RUT, FIRSTNAME, LASTNAME, SECOND_LASTNAME, PHONE, EMAIL,ADDRESS,COMMUNE) VALUES('{$this->getRut()}', '{$this->getFirstname()}', '{$this->getLastname()}', '{$this->getSecondLastname()}', '{$this->getPhone()}', '{$this->getEmail()}','{$this->getAddress()}', '{$this->getCommune}');";
+
+    $save = $this->db->query($sql);
     $result = false;
     if($save){
         $result = true;
     }
     return $result;
 }
+
 
 }
 

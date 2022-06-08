@@ -9,8 +9,8 @@
             <tr>
               <th>RUT</th>
               <th>Nombre</th>
+              <th>Telefono</th>
               <th>Correo</th>
-              <th>Teléfono</th>
               <th>Creado el</th>
             </tr>
           </thead>
@@ -21,7 +21,7 @@
               <td><?= $mechanic->FIRSTNAME . ' ' . $mechanic->LASTNAME?></td>
               <td><?= $mechanic->PHONE?></td>
               <td><?= $mechanic->EMAIL ?></td>
-              <td><?= $mechanic->CREATE_AT ?></td>
+              <td><?= $mechanic->CREATED_AT ?></td>
             </tr>
             <?php endwhile; ?>
           </tbody>

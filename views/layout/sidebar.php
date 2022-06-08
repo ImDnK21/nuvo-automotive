@@ -21,7 +21,7 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="<?= APP_URL . 'admin/ViewList' ?>">Clientes </a>
                                 <a class="nav-link" href="<?= APP_URL . 'admin/ViewListMechanic' ?>">Mecanicos </a>
-                                <a class="nav-link" href="<?= APP_URL . 'admin/dashboard' ?>">Vehiculos </a>
+                                <a class="nav-link" href="<?= APP_URL . 'admin/ViewListVehicle' ?>">Vehiculos </a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"

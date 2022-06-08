@@ -1,6 +1,7 @@
 <?php
 require_once('models/mechanic.php');
 require_once('models/client.php');
+require_once('models/vehicle.php');
 
 class AdminController{
     public function dashboard(){
@@ -32,6 +33,15 @@ class AdminController{
         
     }
 
+    public function ViewListVehicle(){
+        Utils::isAdmin();
+
+        $vehicle = new Vehicle();
+        $vehicles = $vehicle->getAll();
+
+        require_once('views/layout/sidebar.php');
+        require_once('views/admin/vehicle/ViewList.php');
+    }
     // public function ViewList(){
     //     Utils::isAdmin();
 
