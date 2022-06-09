@@ -46,10 +46,9 @@
                   <td><?= $client->CREATED_AT ?></td>
                   <td>
                     <div class="icons">
-                      <button type="button" class="btn btn-warning btn-square btn-xs"  
-                      onclick=""><i
-                      class="fa fa-edit"></i>
-                      </button>
+                      <a href="<?= APP_URL . 'admin/EditClient?rut=' . $client->RUT ?>" type="button" class="btn btn-warning btn-square btn-xs">
+                        <i class="fa fa-edit"></i>
+                      </a>
                       <button type="button" class="btn btn-danger btn-square btn-xs"onclick=><i
                         class="fa fa-trash-o"></i></button>
                         <button type="button" class="btn btn-info btn-square btn-xs" onclick=><i

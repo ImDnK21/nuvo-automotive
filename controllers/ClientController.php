@@ -5,31 +5,7 @@ class ClientController{
         require_once('views/client/viewClient.php');
     }
 
-    // public function save() {
-        
-    //     if (isset($_POST)) {
-    //       $name = isset($_POST['name']) ? trim(ucwords($_POST['name'])) : false;
-          
-    //       if ($name) {
-    //         $author = new Author();
-    //         $author->setName($name);
-    
-    //         if ($author->save()) {
-    //           $_SESSION['author'] = 'complete';
-    //         } else {
-    //           $_SESSION['author'] = 'failed';
-    //         }
-    //       }
-    //     }
-    //     header('Location: ' . APP_URL . 'admin/manageAuthors');
-    //   }
-
-      /**
-       * 
-       * It saves a new user in the database
-       */
-
-      public function save() {
+    public function save() {
         Utils::isAdmin();
         if (isset($_POST)) {
             $rut = isset($_POST['rut']) ? $_POST['rut'] : false;
