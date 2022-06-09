@@ -109,5 +109,15 @@ class Client {
     }
     return $result;
   }
+
+  public function delete() {
+    $sql = "DELETE FROM CLIENT WHERE RUT = '{$this->getRut()}';";
+    $delete = $this->db->query($sql);
+    $result = false;
+    if($delete){
+      $result = true;
+    }
+    return $result;
+  }
 }
 ?>

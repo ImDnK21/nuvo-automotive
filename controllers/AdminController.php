@@ -105,6 +105,21 @@ class AdminController{
         header('Location:' . APP_URL . 'admin/ViewList');
     }
 
+    public function DeleteClient() {
+        Utils::isAdmin();
+        if (isset($_GET['rut'])) {
+            $rut = $_GET['rut'];
+            $client = new Client();
+            $client->setRut($rut);
+            if ($client->delete()) {
+                $_SESSION['saveClient'] = 'Se eliminó correctamente el cliente';
+            } else {
+                $_SESSION['saveClient'] = 'Error al eliminar el cliente';
+            }
+        }
+        header('Location:' . APP_URL . 'admin/ViewList');
+    }
+
     public function ViewListMechanic() {
         Utils::isAdmin();
 
