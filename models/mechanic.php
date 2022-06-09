@@ -61,6 +61,12 @@ public function getAll(){
     return $mechanics;
 }
 
+public function getByRut($rut){
+    $query = "SELECT * FROM MECHANIC WHERE RUT = '$rut'";
+    $mechanic = $this->db->query ($query);
+    return $mechanic->fetch_object();
+  }
+
 
 
 

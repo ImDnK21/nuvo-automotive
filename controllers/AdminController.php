@@ -24,6 +24,21 @@ class AdminController{
         require_once('views/admin/client/AddClient.php');
     }
 
+    public function AddMechanic(){
+        Utils::isAdmin();
+        require_once('views/layout/sidebar.php');
+        require_once('views/admin/mechanic/AddMechanic.php');
+    }
+
+    public function EditMechanic(){
+        Utils::isAdmin();
+        if (isset($_GET['rut']) && !empty ($_GET['rut'])) {
+            $mechanic = new Mechanic();
+            $mechanic = $mechanic->getByRut($_GET['rut']);
+            require_once('views/layout/sidebar.php');
+            require_once('views/admin/mechanic/EditMechanic.php');
+        } 
+    }
     public function EditClient() {
         Utils::isAdmin();
         if (isset($_GET['rut']) && !empty($_GET['rut'])) {
