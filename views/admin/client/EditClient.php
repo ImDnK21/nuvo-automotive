@@ -1,4 +1,3 @@
-<?php if (isset($_POST)): var_dump($_POST); endif; ?>
 <div class="container py-3">
   <div class="row justify-content-center">
     <div class="col-6">

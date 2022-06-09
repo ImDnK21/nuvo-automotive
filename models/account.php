@@ -104,15 +104,9 @@ class Account {
     $password = $this->password;
     
     $query = "SELECT * FROM USER WHERE EMAIL = '{$email}' LIMIT 1";
-    // die($query);
     $login = $this->db->query($query);
-
-    // var_dump($login);
-    // die();
     if ($login && $login->num_rows == 1) {
       $account = $login->fetch_object();
-      // die ('Hola mundo');
-      // die($password);
       if (password_verify($password, $account->PASSWORD)) {
         $result = $account;
 
