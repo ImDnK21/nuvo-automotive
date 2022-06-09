@@ -42,14 +42,12 @@ class AdminController{
         require_once('views/layout/sidebar.php');
         require_once('views/admin/vehicle/ViewList.php');
     }
-    // public function ViewList(){
-    //     Utils::isAdmin();
 
-    //     $mecanico = new Mechanic();
-    //     $mecanicos = $mecanico->getAll();
+    public function TodoList() {
+        Utils::isAdmin();
 
-    //     require_once('views/layout/sidebar.php');
-    //     require_once('views/admin/mechanic/ViewList.php');
-    // }
+        require_once('views/layout/sidebar.php');
+        require_once('views/admin/TodoList.php');
+    }
 
 }

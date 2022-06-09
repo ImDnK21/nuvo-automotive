@@ -35,6 +35,17 @@
                 <td><?= $vehicle->MILEAGE ?></td>
                 <td><?= $vehicle->VEHICLE_TYPE?></td>
                 <td><?= $vehicle->CREATED_AT ?></td>
+                <td>
+                  <div class="icons">
+                    <button type="button" class="btn btn-warning btn-square btn-xs" onclick=""><i
+                        class="fa fa-edit"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-square btn-xs" onclick=><i
+                        class="fa fa-trash-o"></i></button>
+                    <button type="button" class="btn btn-info btn-square btn-xs" onclick=><i
+                        class="fa fa-eye"></i></button>
+                  </div>
+                </td>
               </tr>
               <?php endwhile; ?>
             </tbody>
