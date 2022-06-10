@@ -27,7 +27,7 @@
           <input type="text" name="email" value="<?= $mechanic->EMAIL ?>" class="form-control">
         </div>
 
-        <button type="submit" class="btn btn-primary">Editar cliente</button>
+        <button type="submit" class="btn btn-primary">Editar Mecanico</button>
       </form>
     </div>
   </div>

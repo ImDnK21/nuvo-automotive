@@ -363,6 +363,24 @@ class AdminController{
         header('Location:' . APP_URL . 'admin/ViewListVehicle');
     }
 
+    /**
+     * It deletes a selected Vehicle from the database.
+     */
+    public function DeleteVehicle() {
+        Utils::isAdmin();
+        if (isset($_GET['patent'])) {
+            $patent = $_GET['patent'];
+            $vehicle = new Vehicle();
+            $vehicle->setPatent($patent);
+            if ($vehicle->delete()) {
+                $_SESSION['saveVehicle'] = 'Se eliminó correctamente el vehiculo';
+            } else {
+                $_SESSION['saveVehicle'] = 'Error al eliminar el vehiculo';
+            }
+        }
+        header('Location:' . APP_URL . 'admin/ViewListVehicle');
+    }
+
     
 
    /**

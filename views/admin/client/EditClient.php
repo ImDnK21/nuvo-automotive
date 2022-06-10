@@ -40,7 +40,7 @@
           <label class="form-label">Comuna</label>
           <input type="text" name="commune" value="<?= $client->COMMUNE ?>" class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary">Agregar cliente</button>
+        <button type="submit" class="btn btn-primary">Editar cliente</button>
       </form>
     </div>
   </div>
