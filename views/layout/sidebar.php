@@ -19,7 +19,7 @@
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="<?= APP_URL . 'admin/ViewList' ?>">Clientes </a>
+                                <a class="nav-link" href="<?= APP_URL . 'admin/ViewListClient' ?>">Clientes </a>
                                 <a class="nav-link" href="<?= APP_URL . 'admin/ViewListMechanic' ?>">Mecanicos </a>
                                 <a class="nav-link" href="<?= APP_URL . 'admin/ViewListVehicle' ?>">Vehiculos </a>
                             </nav>

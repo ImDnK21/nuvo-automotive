@@ -1,6 +1,8 @@
 <?php
 
 class Vehicle {
+
+    /* Declaring the properties of the class. */
     private $db;
     private $patent;
     private $brand;
@@ -13,10 +15,12 @@ class Vehicle {
     private $mileage;
     private $vehicle_type;
 
+    /* Constructor. */
     public function __construct() {
         $this->db = Database::connect();
     }
 
+     /* Getters. */
     public function getPatent() {
         return $this->patent;
     }
@@ -56,6 +60,10 @@ class Vehicle {
     public function getVehicleType() {
         return $this->vehicle_type;
     }
+
+    /* Setters. */
+    /* Real_escape_string is used to prevent SQL injection. */
+
 
     public function setPatent($patent) {
         $this->patent = $this->db->escape_string($patent);
@@ -97,20 +105,37 @@ class Vehicle {
         $this->vehicle_type = $this->db->escape_string($vehicle_type);
     }
 
+    /**
+   * This function returns all the Vehicle from the database.
+   * 
+   * @return A query object.
+   */
     public function getAll(){
         $query = "SELECT * FROM VEHICLE";
         $vehicles = $this->db->query($query);
         return $vehicles;
     }
 
+    /**
+   * It gets a Vehicle by its Patent
+   * 
+   * @param Patent ABCD-12
+   * 
+   * @return An object.
+   */
     public function getByPatent($patent){
         $query = "SELECT * FROM VEHICLE WHERE patent = '$patent'";
         $vehicle = $this->db->query($query);
         return $vehicle;
     }
 
+    /**
+   * It saves the data from the form into the database.
+   * 
+   * @return The result of the query.
+   */
     public function save(){
-        $sql = "INSERT INTO CLIENT (PATENT, BRAND, MODEL, YEAR, FUEL_TYPE, TRANSMISSION, COLOR, CHASSIS_NUMBER, MILEAGE, VEHICLE_TYPE) VALUES ('{$this->getPatent()}', '{$this->getBrand()}', '{$this->getModel()}', '{$this->getYear()}', '{$this->getFuel_Type()}', '{$this->getTransmission()}', '{$this->getColor()}', '{$this->getChassisNumber()}', '{$this->getMileage()}', '{$this->getVehicleType()}');";
+        $sql = "INSERT INTO VEHICLE (PATENT, BRAND, MODEL, YEAR, FUEL_TYPE, TRANSMISSION, COLOR, CHASSIS_NUMBER, MILEAGE, VEHICLE_TYPE) VALUES ('{$this->getPatent()}', '{$this->getBrand()}', '{$this->getModel()}', '{$this->getYear()}', '{$this->getFuel_Type()}', '{$this->getTransmission()}', '{$this->getColor()}', '{$this->getChassisNumber()}', '{$this->getMileage()}', '{$this->getVehicleType()}');";
         $save = $this->db->query($sql);
         $result = false;
         if ($save) {
@@ -118,14 +143,43 @@ class Vehicle {
         }
         return $result;
     }
-    
+
+    /**
+   * It updates a Vehicle's information in the database.
+   * Patent is the primary key. Can't be updated or modified.
+   * all the other fields can be updated.
+   * 
+   * @return The result of the query.
+   */
+    public function update(){
+        $sql = "UPDATE VEHICLE SET BRAND = '{$this->getBrand()}', MODEL = '{$this->getModel()}', YEAR = '{$this->getYear()}', FUEL_TYPE = '{$this->getFuel_Type()}', TRANSMISSION = '{$this->getTransmission()}', COLOR = '{$this->getColor()}', CHASSIS_NUMBER = '{$this->getChassisNumber()}', MILEAGE = '{$this->getMileage()}', VEHICLE_TYPE = '{$this->getVehicleType()}' WHERE PATENT = '{$this->getPatent()}';";
+        $update = $this->db->query($sql);
+        $result = false;
+        if ($update) {
+            $result = true;
+        }
+        return $result;
+    }
+
+     /**
+   * It deletes a row from the database table VEHICLE where the PATENT column is equal to the value of the
+   * PATENT property of the object
+   * 
+   * @return The result of the query.
+   */
+    public function delete(){
+        $sql = "DELETE FROM VEHICLE WHERE PATENT = '{$this->getPatent()}';";
+        $delete = $this->db->query($sql);
+        $result = false;
+        if ($delete) {
+            $result = true;
+        }
+        return $result;
+    }
 
 
 
 
 
 }
-
-
-
 ?>

@@ -7,7 +7,8 @@
         <div class="clontainer">
           <div class="col-xs-3">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Buscar por nombre" id='q' onkeyup="load(1);">
+              <input type="text" class="form-control" placeholder="Buscar por nombre" size="50" id='q'
+                onkeyup="load(1);">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button" onclick='load(1);'><i class='fa fa-search'></i></button>
               </span>
@@ -41,17 +42,17 @@
                   <td><?= $client->COMMUNE ?></td>
                   <td><?= $client->CREATED_AT ?></td>
                   <td>
-                    <div class="icons">
-                      <a href="<?= APP_URL . 'admin/EditClient?rut=' . $client->RUT ?>" type="button" class="btn btn-warning btn-square btn-xs">
-                        <i class="fa fa-edit"></i>
-                      </a>
-                      <a href="<?= APP_URL . 'admin/DeleteClient?rut=' . $client->RUT ?>" type="button" class="btn btn-danger btn-square btn-xs">
-                        <i class="fa fa-trash"></i>
-                      </a>
-                      <a href="#" type="button" class="btn btn-info btn-square btn-xs">
-                        <i class="fa fa-eye"></i>
-                      </a>
-                    </div>
+                    <a href="<?= APP_URL . 'admin/EditClient?rut=' . $client->RUT ?>" type="button"
+                      class="btn btn-warning btn-square btn-xs">
+                      <i class="fa fa-edit"></i>
+                    </a>
+                    <a href="<?= APP_URL . 'admin/DeleteClient?rut=' . $client->RUT ?>" type="button"
+                      class="btn btn-danger btn-square btn-xs">
+                      <i class="fa fa-trash"></i>
+                    </a>
+                    <a href="#" type="button" class="btn btn-info btn-square btn-xs">
+                      <i class="fa fa-eye"></i>
+                    </a>
                   </td>
                 </tr>
                 <?php endwhile; ?>

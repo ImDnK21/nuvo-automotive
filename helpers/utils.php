@@ -26,14 +26,17 @@ class Utils {
 // Interpreta los roles de permisos según los valores de la base de datos
 public static function getRole($role) {
   $value = '';
-
   switch ($role) {
     case 'admin': $value = 'Administrador'; break;
     case 'user': $value = 'Usuario'; break;
   }
-
   return $value;
 }
 
+public static function old($field) {
+  if (isset($_POST[$field])) {
+    return $_POST[$field];
+  }
+}
   
 }

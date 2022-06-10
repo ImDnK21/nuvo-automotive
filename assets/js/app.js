@@ -8,3 +8,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 });
+
+function alert() {
+    windows.alert("asd");
+}
