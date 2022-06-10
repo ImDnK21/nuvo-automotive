@@ -330,12 +330,11 @@ class AdminController{
             $fuel_type = isset($_POST['fuel_type']) ? trim($_POST['fuel_type']) : false;
             $transmission = isset($_POST['transmission']) ? trim($_POST['transmission']) : false;
             $color = isset($_POST['color']) ? trim($_POST['color']) : false;
-            $chasiss_number = isset($_POST['chasiss_number']) ? trim($_POST['chasiss_number']) : false;
+            $chassis_number = isset($_POST['chassis_number']) ? trim($_POST['chassis_number']) : false;
             $mileage = isset($_POST['mileage']) ? trim($_POST['mileage']) : false;
             $vehicle_type = isset($_POST['vehicle_type']) ? trim($_POST['vehicle_type']) : false;
 
-
-            if ($patent && $brand && $model && $year && $fuel_type && $transmission && $color && $chasiss_number && $mileage && $vehicle_type) {
+            if ($patent && $brand && $model && $year && $fuel_type && $transmission && $color && $chassis_number && $mileage && $vehicle_type) {
                 $vehicle = new Vehicle();
                 $vehicle->setPatent($_POST['patent']);
                 $vehicle->setBrand($_POST['brand']);
@@ -348,13 +347,50 @@ class AdminController{
                 $vehicle->setMileage($_POST['mileage']);
                 $vehicle->setVehicle_type($_POST['vehicle_type']);
                 
-
-
                 if ($vehicle->save()) {
                     $_SESSION['saveVehicle'] = 'Se agregó correctamente el vehiculo';
                 
                 } else {
                     $_SESSION['saveVehicle'] = 'Error al agregar el vehiculo';
+                }
+            } else {
+                $_SESSION['saveVehicle'] = 'Debes rellenar todos los campos';
+            }
+        }
+        header('Location:' . APP_URL . 'admin/ViewListVehicle');
+    }
+
+    public function UpdateVehicle() {
+        Utils::isAdmin();
+        if (isset($_POST)) {
+            $patent = isset($_POST['patent']) ? trim($_POST['patent']) : false;
+            $brand = isset($_POST['brand']) ? trim($_POST['brand']) : false;
+            $model = isset($_POST['model']) ? trim($_POST['model']) : false;
+            $year = isset($_POST['year']) ? trim($_POST['year']) : false;
+            $fuel_type = isset($_POST['fuel_type']) ? trim($_POST['fuel_type']) : false;
+            $transmission = isset($_POST['transmission']) ? trim($_POST['transmission']) : false;
+            $color = isset($_POST['color']) ? trim($_POST['color']) : false;
+            $chassis_number = isset($_POST['chassis_number']) ? trim($_POST['chassis_number']) : false;
+            $mileage = isset($_POST['mileage']) ? trim($_POST['mileage']) : false;
+            $vehicle_type = isset($_POST['vehicle_type']) ? trim($_POST['vehicle_type']) : false;
+
+            if ($patent && $brand && $model && $year && $fuel_type && $transmission && $color && $chassis_number && $mileage && $vehicle_type) {
+                $vehicle = new Vehicle();
+                $vehicle->setPatent($_POST['patent']);
+                $vehicle->setBrand($_POST['brand']);
+                $vehicle->setModel($_POST['model']);
+                $vehicle->setYear($_POST['year']);
+                $vehicle->setFuelType($_POST['fuel_type']);
+                $vehicle->setTransmission($_POST['transmission']);
+                $vehicle->setColor($_POST['color']);
+                $vehicle->setChassis_number($_POST['chassis_number']);
+                $vehicle->setMileage($_POST['mileage']);
+                $vehicle->setVehicle_type($_POST['vehicle_type']);
+                
+                if ($vehicle->update()) {
+                    $_SESSION['saveVehicle'] = 'Se actualizó correctamente el vehiculo';
+                } else {
+                    $_SESSION['saveVehicle'] = 'Error al actualizar el vehiculo';
                 }
             } else {
                 $_SESSION['saveVehicle'] = 'Debes rellenar todos los campos';
@@ -380,8 +416,6 @@ class AdminController{
         }
         header('Location:' . APP_URL . 'admin/ViewListVehicle');
     }
-
-    
 
    /**
     * This function is called when the user clicks on the TodoList link in the sidebar. It checks if

@@ -6,13 +6,13 @@
         <li>ARREGLAR SIDEBAR TOGGLE (QUE LA PANTALLA SE ADAPTE AL MAXIMO CUANDO SE MINIMIZE EL SIDEBAR TOOGLE)</li>
         <li class="text-decoration-line-through">AGREGAR CLIENTE</li>
         <li class="text-decoration-line-through" >AGREGAR MECANICO</li>
-        <li  >AGREGAR VEHICULO</li>
+        <li class="text-decoration-line-through">AGREGAR VEHICULO</li>
         <li class="text-decoration-line-through">EDITAR CLIENTE</li>
         <li class="text-decoration-line-through">EDITAR MECANICO</li>
-        <li>EDITAR VEHICULO</li>
+        <li class="text-decoration-line-through">EDITAR VEHICULO</li>
         <li class="text-decoration-line-through">ELIMINAR CLIENTE</li>
         <li class="text-decoration-line-through">ELIMINAR MECANICO</li>
-        <li>ELIMINAR VEHICULO</li>
+        <li class="text-decoration-line-through">ELIMINAR VEHICULO</li>
         <li>- AGREGAR CATALOGO DE PRODUCTOS Y REPUESTOS (AGREGAR TABLA A LA BD)
         <br>- MOSTRAR NOMBRE PRODUCTO
         <br>- MOSTRAR CATEGORIA DEL PRODUCTO

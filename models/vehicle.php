@@ -126,7 +126,7 @@ class Vehicle {
     public function getByPatent($patent){
         $query = "SELECT * FROM VEHICLE WHERE patent = '$patent'";
         $vehicle = $this->db->query($query);
-        return $vehicle;
+        return $vehicle->fetch_object();
     }
 
     /**
