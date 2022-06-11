@@ -61,16 +61,10 @@
                     </div>
                   </td>
                 </tr>
-                <!-- Modal -->
-                <style>
-                  .modal-backdrop {
-                    z-index: -1;
-                  }
-                </style>
                 <div class="modal fade" id="deleteVehicle<?=$vehicle->PATENT?>" tabindex="-1" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                      <div class="modal-header" style="color: red ;"" >
+                      <div class="modal-header" style="color: red ;">
                     <h5 class=" modal-title fs-6 fw-bold">¿Estás seguro que deseas eliminar este Vehiculo?</h5>
                         <button type="button" data-bs-dismiss="modal" class="btn-close"></button>
                       </div>
