@@ -28,7 +28,7 @@
                   <th>Año Fabricacion</th>
                   <!-- <th>Tipo de combustible</th> -->
                   <!-- <th>transmision</th> -->
-                  <th>Color</th>
+                  <!-- <th>Color</th> -->
                   <th>N° de chasis</th>
                   <th>Kilometraje</th>
                   <th>Tipo de vehiculo</th>
@@ -44,7 +44,7 @@
                   <td><?= $vehicle->YEAR ?></td>
                   <!-- <td><?= $vehicle->FUEL_TYPE ?></td> -->
                   <!-- <td><?= $vehicle->TRANSMISSION ?></td> -->
-                  <td><?= $vehicle->COLOR ?></td>
+                  <!-- <td><?= $vehicle->COLOR ?></td> -->
                   <td><?= $vehicle->CHASSIS_NUMBER ?></td>
                   <td><?= $vehicle->MILEAGE ?></td>
                   <td><?= $vehicle->VEHICLE_TYPE?></td>

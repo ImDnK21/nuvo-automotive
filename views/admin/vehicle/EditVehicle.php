@@ -38,10 +38,10 @@
                             <label for="fuel_type" class="form-label required" value="<?=$vehicle->FUEL_TYPE?>" >Tipo de Combustible</label>
                             <select name="fuel_type" class="form-select">
                                 <option selected="selected" value="nuevo">Bencina</option>
-                                <option value="diesel">Diesel</option>
-                                <option value="electric">Electrico</option>
-                                <option value="natural_gas">Gas Natural</option>
-                                <option value="hybrid">Hibrido (Gasolina - Gas natural)</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Electrico">Electrico</option>
+                                <option value="Gas natural">Gas Natural</option>
+                                <option value="Hibrido (Bencina - Gas natural)">Hibrido (Bencina - Gas natural)</option>
                             </select>
                         </div>
                     </div>
@@ -50,9 +50,9 @@
                             <label for="transmission" class="form-label required" value="<?=$vehicle->TRANSMISSION?>" >Transmision</label>
                             <select name="transmission" class="form-select">
                                 <option selected="selected" value="mechanic">Mecanico</option>
-                                <option value="automatic">Automatico</option>
-                                <option value="usado">Electrico</option>
-                                <option value="cvt">CVT</option>
+                                <option value="Automatica">Automatico</option>
+                                <option value="Electrico">Electrico</option>
+                                <option value="CVT">CVT</option>
                             </select>
                         </div>
                     </div>
@@ -80,19 +80,19 @@
                         <div class="mb-3">
                             <label for="vehicle_type" class="form-label required" value="<?=$vehicle->VEHICLE_TYPE?>">Tipo de Vehiculo</label>
                             <select name="vehicle_type" class="form-select">
-                                <option selected="selected" value="sedan">Sedan</option>
-                                <option value="Station_wagon">Stating Wagon</option>
-                                <option value="hatchback">HatchBack</option>
-                                <option value="suv">SUV</option>
-                                <option value="sport">Deportivo</option>
-                                <option value="commercial_vehicle">Vehiculo Comercial</option>
-                                <option value="van">VAN</option>
-                                <option value="pickup">PickUp</option>
+                                <option selected="selected" value="Sedan">Sedan</option>
+                                <option value="Station Wagon">Stating Wagon</option>
+                                <option value="HatchBack">HatchBack</option>
+                                <option value="SUV">SUV</option>
+                                <option value="Deportivo">Deportivo</option>
+                                <option value="Vehiculo Comercial">Vehiculo Comercial</option>
+                                <option value="VAN">VAN</option>
+                                <option value="Pickup">PickUp</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary float-end">Agregar</button>
+                        <button type="submit" class="btn btn-primary float-end">Agregar Vehiculo</button>
                     </div>
                 </div>
             </form>

@@ -11,7 +11,7 @@ class Vehicle {
     private $fuel_type;
     private $transmission;
     private $color;
-    private $chasis_number;
+    private $chassis_number;
     private $mileage;
     private $vehicle_type;
 
@@ -50,7 +50,7 @@ class Vehicle {
     }
 
     public function getChassisNumber() {
-        return $this->chasiss_number;
+        return $this->chassis_number;
     }
 
     public function getMileage() {
