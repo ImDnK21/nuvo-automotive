@@ -343,7 +343,7 @@ class AdminController{
                 $vehicle->setFuelType($_POST['fuel_type']);
                 $vehicle->setTransmission($_POST['transmission']);
                 $vehicle->setColor($_POST['color']);
-                $vehicle->setChassis_number($_POST['chasiss_number']);
+                $vehicle->setChassis_number($_POST['chassis_number']);
                 $vehicle->setMileage($_POST['mileage']);
                 $vehicle->setVehicle_type($_POST['vehicle_type']);
                 
