@@ -146,6 +146,7 @@ class AdminController{
         }
         header('Location:' . APP_URL . 'admin/ViewListClient');
     }
+   
 
     /**
      ** MECHANICAL FUNCTION'S METHODS

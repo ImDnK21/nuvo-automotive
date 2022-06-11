@@ -52,7 +52,6 @@
                             <select name="transmission" class="form-select">
                                 <option selected="selected" value="Mecanico">Mecanico</option>
                                 <option value="Automatico">Automatico</option>
-                                <option value="Electrico">Electrico</option>
                                 <option value="CVT">CVT</option>
                             </select>
                         </div>
@@ -82,7 +81,7 @@
                             <label for="vehicle_type" class="form-label required">Tipo de Vehiculo</label>
                             <select name="vehicle_type" class="form-select">
                                 <option selected="selected" value="Sedan">Sedan</option>
-                                <option value="Stating Wagon">Stating Wagon</option>
+                                <option value="Station Wagon">Station Wagon</option>
                                 <option value="HatchBack">HatchBack</option>
                                 <option value="SUV">SUV</option>
                                 <option value="Deportivo">Deportivo</option>

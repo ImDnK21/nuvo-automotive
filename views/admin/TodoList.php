@@ -13,7 +13,9 @@
         <li class="text-decoration-line-through">ELIMINAR CLIENTE</li>
         <li class="text-decoration-line-through">ELIMINAR MECANICO</li>
         <li class="text-decoration-line-through">ELIMINAR VEHICULO</li>
-        <li>AGREGAR MODAL PARA ELIMINAR CLIENTE, VEHICULO Y MECANICO</li>
+        <li>AGREGAR MODAL PARA ELIMINAR CLIENTE</li>
+        <li class="text-decoration-line-through">AGREGAR MODAL PARA ELIMINAR VEHICULO </li>
+        <li>AGREGAR MODAL PARA ELIMINAR MECANICO</li>
         <li>AJUSTAR SCREEN AL MINIMIZAR Y MAXiMIZAR EL SIDEBAR</li>
         <li>- AGREGAR CATALOGO DE PRODUCTOS Y REPUESTOS (AGREGAR TABLA A LA BD)
         <br>- MOSTRAR NOMBRE PRODUCTO

@@ -10,8 +10,8 @@
 
                     <div class="col-12 col-md-4">
                         <div class="mb-3">
-                            <label for="patent" class="form-label required">Patente</label>
-                            <input type="text" name="patent" value="<?=$vehicle->PATENT?>" class="form-control">
+                            <label for="patent" class="form-label required" >Patente</label>
+                            <input type="text" name="patent" value="<?=$vehicle->PATENT?>" disabled class="form-control">
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
@@ -51,7 +51,6 @@
                             <select name="transmission" class="form-select">
                                 <option selected="selected" value="mechanic">Mecanico</option>
                                 <option value="Automatica">Automatico</option>
-                                <option value="Electrico">Electrico</option>
                                 <option value="CVT">CVT</option>
                             </select>
                         </div>
@@ -81,7 +80,7 @@
                             <label for="vehicle_type" class="form-label required" value="<?=$vehicle->VEHICLE_TYPE?>">Tipo de Vehiculo</label>
                             <select name="vehicle_type" class="form-select">
                                 <option selected="selected" value="Sedan">Sedan</option>
-                                <option value="Station Wagon">Stating Wagon</option>
+                                <option value="Station Wagon">Station Wagon</option>
                                 <option value="HatchBack">HatchBack</option>
                                 <option value="SUV">SUV</option>
                                 <option value="Deportivo">Deportivo</option>

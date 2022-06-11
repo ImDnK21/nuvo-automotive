@@ -1,6 +1,5 @@
 <div class="container py-3">
   <div class="row">
-
     <div class="col-12 -9">
       <div class="mb-3">
         <h2 class="fw-bold mb-3">Lista de vehiculos</h2>
@@ -55,16 +54,43 @@
                         class="btn btn-warning btn-square btn-xs">
                         <i class="fa fa-edit"></i>
                       </a>
-                      <a href="<?= APP_URL . 'admin/DeleteVehicle?patent=' . $vehicle->PATENT ?>" type="button"
-                        class="btn btn-danger btn-square btn-xs">
+                      <a type="button" class="btn btn-danger btn-square btn-xs" data-bs-toggle="modal"
+                        data-bs-target="#deleteVehicle<?=$vehicle->PATENT?>">
                         <i class="fa fa-trash"></i>
-                      </a>
-                      <a href="#" type="button" class="btn btn-info btn-square btn-xs">
-                        <i class="fa fa-eye"></i>
                       </a>
                     </div>
                   </td>
                 </tr>
+                <!-- Modal -->
+                <style>
+                  .modal-backdrop {
+                    z-index: -1;
+                  }
+                </style>
+                <div class="modal fade" id="deleteVehicle<?=$vehicle->PATENT?>" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header" style="color: red ;"" >
+                    <h5 class=" modal-title fs-6 fw-bold">¿Estás seguro que deseas eliminar este Vehiculo?</h5>
+                        <button type="button" data-bs-dismiss="modal" class="btn-close"></button>
+                      </div>
+                      <div class="modal-body text-center">
+                        <b>Patente: <?= $vehicle->PATENT ?></b>
+                        <br>
+                        <b>Marca: <?= $vehicle->BRAND ?></b>
+                        <br>
+                        <b>Modelo: <?= $vehicle->MODEL ?></b>
+                        <br>
+                        Una vez eliminado, no podrás recuperarlo.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <a href="<?= APP_URL . 'admin/deleteVehicle?patent=' . $vehicle->PATENT ?>"
+                          class="btn btn-danger">Eliminar</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <?php endwhile; ?>
               </tbody>
             </table>

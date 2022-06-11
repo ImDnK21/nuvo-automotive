@@ -43,17 +43,36 @@
                         class="btn btn-warning btn-square btn-xs">
                         <i class="fa fa-edit"></i>
                       </a>
-                      <a href="<?= APP_URL . 'admin/DeleteMechanic?rut=' . $mechanic->RUT ?>" type="button"
-                        class="btn btn-danger btn-square btn-xs">
+                      <a type="button"  class="btn btn-danger btn-square btn-xs"  data-bs-toggle="modal" data-bs-target="#deleteMechanic<?=$mechanic->RUT?>">
                         <i class="fa fa-trash"></i>
                       </a>
-                      <a href="#" type="button" class="btn btn-info btn-square btn-xs">
-                        <i class="fa fa-eye"></i>
-                      </a>
+                      </div>
                     </div>
                   </td>
                 </tr>
-                <?php endwhile; ?>
+                <!-- Modal -->
+                <style>
+                  .modal-backdrop {
+                   z-index: -1;
+                  }
+                </style>
+                <div class="modal fade" id="deleteMechanic<?=$mechanic->RUT?>" tabindex="-1" data-keyboard="false" data-backdrop="static" >
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title ">Eliminar Vehiculo</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-centered">
+                              <p>¿Estas Seguro que deseas eliminar el vehiculo <b><?=$mechanic->RUT ?> - <?=$mechanic->RUT?></b> Patente: <b><?=$mechanic->RUT ?></b>?</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                              <a href="<?= APP_URL . 'admin/deleteMechanic?rut=' . $mechanic->RUT ?>" class="btn btn-danger">Eliminar</a>
+                            </div>
+                          </div>
+                        </div>
+              <?php endwhile; ?>
               </tbody>
             </table>
           </div>

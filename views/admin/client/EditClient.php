@@ -4,7 +4,7 @@
       <form action="<?= APP_URL . 'admin/UpdateClient' ?>" method="post">
         <div class="mb-3">
           <label class="form-label">RUT</label>
-          <input type="text" name="rut" value="<?= $client->RUT ?>" class="form-control" readonly>
+          <input type="text" name="rut" value="<?= $client->RUT ?>" disabled class="form-control" readonly>
         </div>
         <div class="mb-3">
           <label class="form-label">Nombre</label>

@@ -4,7 +4,7 @@
       <form action="<?= APP_URL . 'admin/UpdateMechanic' ?>" method="post">
         <div class="mb-3">
           <label class="form-label">RUT</label>
-          <input type="text" name="rut" value="<?= $mechanic->RUT ?>" class="form-control" readonly>
+          <input type="text" name="rut" value="<?= $mechanic->RUT ?>" disabled class="form-control" readonly>
         </div>
         <div class="mb-3">
           <label class="form-label">Nombre</label>
