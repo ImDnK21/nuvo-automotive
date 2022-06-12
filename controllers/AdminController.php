@@ -239,7 +239,7 @@ class AdminController{
             $phone = isset($_POST['phone']) ? trim($_POST['phone']) : false;
             $email = isset($_POST['email']) ? trim($_POST['email']) : false;
 
-
+            
             if ($rut && $firstname && $lastname && $phone && $email ) {
                 $mechanic = new Mechanic();
                 $mechanic->setRut($_POST['rut']);
