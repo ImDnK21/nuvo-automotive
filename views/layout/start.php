@@ -13,4 +13,4 @@
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="<?= APP_URL . 'assets/css/main.css' ?>">
 </head>
-<body class="sb-sidenav-toggled">
+<body class="sb-nav-fixed">
