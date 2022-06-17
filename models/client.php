@@ -125,6 +125,12 @@ class Client {
     return $result;
   }
 
+  public function totalClient(){
+    $query = "SELECT COUNT(*) AS total FROM CLIENT";
+    $total = $this->db->query($query);
+    return $total->fetch_object()->total;
+  }
+
 
 
   /**

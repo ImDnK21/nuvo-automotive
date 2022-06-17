@@ -11,6 +11,9 @@ class AdminController{
     */ 
     public function dashboard(){
         utils::isAdmin();
+        $cliente = new Client();
+        $clientes = $cliente->totalClient();
+
         require_once('views/layout/sidebar.php');
         require_once('views/admin/dashboard.php');
     }
@@ -436,10 +439,6 @@ class AdminController{
         require_once('views/admin/supplies/index.php');
     }
 
-    // public function Supplies(){
-    //     Utils::isAdmin();
-    //     require_once('views/layout/sidebar.php');
-    //     require_once('views/admin/suplies.php');
-    // }
+   
 
 }
