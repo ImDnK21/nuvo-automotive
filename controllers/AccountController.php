@@ -79,6 +79,38 @@ class AccountController {
     }
   }
 
+    public function profile() {
+      Utils::isAuth();
+      require_once('views/account/profile.php');
+      Utils::title('Perfil');
+    }
+
+    public function update(){
+      Utils::isAuth();
+      if (isset($_POST) && isset($_GET['id']) && !empty($_POST)) {
+        $firstname = isset($_POST['firstname']) ? ucwords(trim($_POST['firstname'])) : false;
+        $lastname = isset($_POST['lastname']) ? ucwords(trim($_POST['lastname'])) : false;
+        $email = isset($_POST['email']) ? trim($_POST['email']) : false;
+
+        if ($firstname && $lastname && $email) {
+          $account = new Account();
+          $account->setId($_GET['id']);
+          $account->setFirstname($firstname);
+          $account->setLastname($lastname);
+          $account->setEmail($email);
+
+          if ($account->update()) {
+            $_SESSION['profile_message'] = 'Perfil actualizado correctamente';
+            $_SESSION['profile_message_type'] = 'success';
+          } else {
+            $_SESSION['profile_message'] = 'Error al actualizar el perfil. Por favor intente nuevamente.';
+            $_SESSION['profile_message_type'] = 'warning';
+          }
+        }
+    }
+    header('Location:' . APP_URL . 'account/profile');
+  }
+
   public function logout() {
     if (isset($_SESSION['logged'])) {
       unset($_SESSION['logged']);

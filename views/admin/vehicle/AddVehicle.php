@@ -8,7 +8,6 @@
         <div class="card-body">
             <form action="<?= APP_URL . 'admin/saveVehicle' ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
-
                     <div class="col-12 col-md-4">
                         <div class="mb-3">
                             <label for="patent" class="form-label required">Patente</label>

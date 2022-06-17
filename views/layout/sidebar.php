@@ -24,6 +24,15 @@
                                 <a class="nav-link" href="<?= APP_URL . 'admin/ViewListVehicle' ?>">Vehiculos </a>
                             </nav>
                         </div>
+                        <a class="nav-link" href="<?= APP_URL . 'admin/Supplies' ?>">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Gestion de Insumos
+                        </a>
+                        <a class="nav-link" href="<?= APP_URL . 'admin/TodoList' ?>">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Servicios
+                        </a>
+                        
                         <a class="nav-link" href="<?= APP_URL . 'admin/TodoList' ?>">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             To-Do List

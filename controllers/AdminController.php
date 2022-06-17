@@ -129,6 +129,7 @@ class AdminController{
         header('Location:' . APP_URL . 'admin/ViewListClient');
     }
 
+
     /**
      * It deletes a selected client from the database.
      */
@@ -238,7 +239,7 @@ class AdminController{
             $lastname = isset($_POST['lastname']) ? trim($_POST['lastname']) : false;
             $phone = isset($_POST['phone']) ? trim($_POST['phone']) : false;
             $email = isset($_POST['email']) ? trim($_POST['email']) : false;
-
+           
             
             if ($rut && $firstname && $lastname && $phone && $email ) {
                 $mechanic = new Mechanic();
@@ -428,5 +429,17 @@ class AdminController{
         require_once('views/layout/sidebar.php');
         require_once('views/admin/TodoList.php');
     }
+
+     public function  Supplies(){
+        Utils::isAdmin();
+        require_once('views/layout/sidebar.php');
+        require_once('views/admin/supplies/index.php');
+    }
+
+    // public function Supplies(){
+    //     Utils::isAdmin();
+    //     require_once('views/layout/sidebar.php');
+    //     require_once('views/admin/suplies.php');
+    // }
 
 }

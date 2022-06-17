@@ -11,14 +11,14 @@
                     <div class="col-12 col-md-4">
                         <div class="mb-3">
                             <label for="patent" class="form-label required" >Patente</label>
-                            <input type="text" name="patent" value="<?=$vehicle->PATENT?>" disabled class="form-control">
+                            <input type="text" name="patent" value="<?=$vehicle->PATENT?>" readonly>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="mb-3">
                             <label for="brand" class="form-label required">Marca</label>
                             <input type="text" name="brand" value="<?=$vehicle->BRAND?>" class="form-control">
-                        </div>
+                    </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <div class="mb-3">

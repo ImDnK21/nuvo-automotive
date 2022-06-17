@@ -17,11 +17,7 @@
         <li class="text-decoration-line-through">AGREGAR MODAL PARA ELIMINAR VEHICULO </li>
         <li class="text-decoration-line-through">AGREGAR MODAL PARA ELIMINAR MECANICO</li>
         <li>AJUSTAR SCREEN AL MINIMIZAR Y MAXIMIZAR EL SIDEBAR</li>
-        <li>- AGREGAR CATALOGO DE PRODUCTOS Y REPUESTOS (AGREGAR TABLA A LA BD)
-        <br>- MOSTRAR NOMBRE PRODUCTO
-        <br>- MOSTRAR CATEGORIA DEL PRODUCTO
-        <br>- MOSTRAR VALOR DEL PRODUCTO
-        <br>- MOSTRAR IMAGEN DEL PRODUCTO (IMG REFERENCIAL)</li>
+        <li>- AGREGAR CATALOGO DE INSUMOS (AGREGAR TABLA A LA BD)
       </ul>
     </div>
   </div>

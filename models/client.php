@@ -125,22 +125,7 @@ class Client {
     return $result;
   }
 
-  /**
-   * It updates a client's information in the database.
-   * Rut is the primary key. Can't be updated or modified.
-   * all the other fields can be updated.
-   * 
-   * @return The result of the query.
-   */
-  public function update(){
-    $sql = "UPDATE CLIENT SET FIRSTNAME = '{$this->getFirstname()}', LASTNAME = '{$this->getLastname()}', SECOND_LASTNAME = '{$this->getSecondLastname()}', PHONE = '{$this->getPhone()}', EMAIL = '{$this->getEmail()}', ADDRESS = '{$this->getAddress()}', COMMUNE = '{$this->getCommune()}' WHERE RUT = '{$this->getRut()}';";
-    $update = $this->db->query($sql);
-    $result = false;
-    if($update){
-      $result = true;
-    }
-    return $result;
-  }
+
 
   /**
    * It deletes a row from the database table CLIENT where the RUT column is equal to the value of the
@@ -153,6 +138,24 @@ class Client {
     $delete = $this->db->query($sql);
     $result = false;
     if($delete){
+      $result = true;
+    }
+    return $result;
+  }
+
+
+  /**
+   * It updates a client's information in the database.
+   * Rut is the primary key. Can't be updated or modified.
+   * all the other fields can be updated.
+   * 
+   * @return The result of the query.
+   */
+  public function update(){
+    $sql = "UPDATE CLIENT SET FIRSTNAME = '{$this->getFirstname()}', LASTNAME = '{$this->getLastname()}', SECOND_LASTNAME = '{$this->getSecondLastname()}', PHONE = '{$this->getPhone()}', EMAIL = '{$this->getEmail()}', ADDRESS = '{$this->getAddress()}', COMMUNE = '{$this->getCommune()}' WHERE RUT = '{$this->getRut()}';";
+    $update = $this->db->query($sql);
+    $result = false;
+    if($update){
       $result = true;
     }
     return $result;

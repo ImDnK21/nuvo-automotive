@@ -98,6 +98,16 @@ class Account {
     return $result;
   }
 
+  public function update(){
+    $query = "UPDATE USER SET RUT = '{$this->getRut()}', FIRSTNAME = '{$this->getFirstname()}', LASTNAME = '{$this->getLastname()}', EMAIL = '{$this->getEmail()}', PASSWORD = '{$this->getPassword()}' WHERE ID = '{$this->getId()}'";
+    $update = $this->db->query($query);
+    $result = false;
+    if ($update) {
+      return true;
+    }
+    return $result;
+  }
+
   public function login() {
     $result = false;
     $email = $this->email;
