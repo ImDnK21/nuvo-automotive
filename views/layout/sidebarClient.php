@@ -2,13 +2,13 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <div class="sb-sidenav-menu-heading">Core</div>
+                <div class="sb-sidenav-menu-heading">Informacion</div>
                 <a class="nav-link" href="<?= APP_URL . 'admin/dashboard' ?>">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Dashboard
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-car"></i></div>
+                    Mi Vehiculo
                 </a>
                 <div class="sb-sidenav-menu-heading">Administración</div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTaller" aria-expanded="false" aria-controls="collapseTaller">
+                <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTaller" aria-expanded="false" aria-controls="collapseTaller">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Gestión del taller
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -19,18 +19,18 @@
                         <a class="nav-link" href="<?= APP_URL . 'admin/ViewListMechanic' ?>">Mecánico</a>
                         <a class="nav-link" href="<?= APP_URL . 'admin/ViewListVehicle' ?>">Vehículos</a>
                     </nav>
-                </div>
+                </div> -->
                 <a class="nav-link" href="<?= APP_URL . 'admin/Supplies' ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Gestión de insumos
+                    Mi Orden de Trabajo
                 </a>
                 <a class="nav-link" href="<?= APP_URL . '' ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Servicios
+                    Servicios Solicitados
                 </a>
-                <a class="nav-link" href="<?= APP_URL . 'admin/ToDoList' ?>">
+                <a class="nav-link" href="<?= APP_URL . '' ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    To-do List
+                    Historial de Ordenes de trabajos
                 </a>
                 <!-- <div class="sb-sidenav-menu-heading">Addons</div>
                 <a class="nav-link" href="charts.html">

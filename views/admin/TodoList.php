@@ -16,8 +16,11 @@
         <li class="text-decoration-line-through">AGREGAR MODAL PARA ELIMINAR CLIENTE</li>
         <li class="text-decoration-line-through">AGREGAR MODAL PARA ELIMINAR VEHICULO </li>
         <li class="text-decoration-line-through">AGREGAR MODAL PARA ELIMINAR MECANICO</li>
-        <li>AJUSTAR SCREEN AL MINIMIZAR Y MAXIMIZAR EL SIDEBAR</li>
-        <li>- AGREGAR CATALOGO DE INSUMOS (AGREGAR TABLA A LA BD)
+        <li class="text-decoration-line-through">AJUSTAR SCREEN AL MINIMIZAR Y MAXIMIZAR EL SIDEBAR</li>
+        <li>AGREGAR CATALOGO DE INSUMOS (AGREGAR TABLA A LA BD)
+        <li>AGREGAR SIDEBAR EN PROFILE DEPENDIENDO DEL TIPO DE USER</li>
+        <li>AGREGAR CATALOGO DE SERVICIOS </li>
+        <li>ASOCIAR VEHICULO A CLIENTE Y USUARIO</li>
       </ul>
     </div>
   </div>

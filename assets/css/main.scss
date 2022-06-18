@@ -14,16 +14,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-
-/*
- css profile
- */
-
-
-/*
-End css profile
-*/
-
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -115,6 +105,7 @@ hr:not([size]) {
     height: 1px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 body {
     font-family: "Poppins", sans-serif;
     color: #444444;
@@ -264,7 +255,7 @@ a:hover {
     background-color: #ffffff;
     color: #444444;
     text-align: center;
-    box-shadow: 0 2px 20px rgba(50, 50, 50, 0.1);
+    box-shadow: 0 2px 20px rgb(50 50 50 / 10%);
     transition: color 0.2s;
 }
 
@@ -480,7 +471,8 @@ kbd,
 samp {
     font-family: var(--bs-font-monospace);
     font-size: 1em;
-    direction: ltr;
+    direction: ltr/* rtl:ignore */
+    ;
     unicode-bidi: bidi-override;
 }
 
@@ -2318,18 +2310,6 @@ progress {
     opacity: 1;
 }
 
-.form-control::-moz-placeholder,
-.dataTable-input::-moz-placeholder {
-    color: #6c757d;
-    opacity: 1;
-}
-
-.form-control:-ms-input-placeholder,
-.dataTable-input:-ms-input-placeholder {
-    color: #6c757d;
-    opacity: 1;
-}
-
 .form-control::placeholder,
 .dataTable-input::placeholder {
     color: #6c757d;
@@ -2342,24 +2322,6 @@ progress {
 [readonly].dataTable-input {
     background-color: #e9ecef;
     opacity: 1;
-}
-
-.form-control::-webkit-file-upload-button,
-.dataTable-input::-webkit-file-upload-button {
-    padding: 0.375rem 0.75rem;
-    margin: -0.375rem -0.75rem;
-    -webkit-margin-end: 0.75rem;
-    margin-inline-end: 0.75rem;
-    color: #212529;
-    background-color: #e9ecef;
-    pointer-events: none;
-    border-color: inherit;
-    border-style: solid;
-    border-width: 0;
-    border-inline-end-width: 1px;
-    border-radius: 0;
-    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .form-control::-webkit-file-upload-button,
@@ -2403,20 +2365,10 @@ progress {
         -webkit-transition: none;
         transition: none;
     }
-    .form-control::-webkit-file-upload-button,
-    .dataTable-input::-webkit-file-upload-button {
-        -webkit-transition: none;
-        transition: none;
-    }
     .form-control::file-selector-button,
     .dataTable-input::file-selector-button {
         transition: none;
     }
-}
-
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button,
-.dataTable-input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-    background-color: #dde0e3;
 }
 
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button,
@@ -2912,31 +2864,9 @@ textarea.form-control-lg {
     color: transparent;
 }
 
-.form-floating>.form-control::-moz-placeholder,
-.form-floating>.dataTable-input::-moz-placeholder {
-    color: transparent;
-}
-
-.form-floating>.form-control:-ms-input-placeholder,
-.form-floating>.dataTable-input:-ms-input-placeholder {
-    color: transparent;
-}
-
 .form-floating>.form-control::placeholder,
 .form-floating>.dataTable-input::placeholder {
     color: transparent;
-}
-
-.form-floating>.form-control:not(:-moz-placeholder-shown),
-.form-floating>.dataTable-input:not(:-moz-placeholder-shown) {
-    padding-top: 1.625rem;
-    padding-bottom: 0.625rem;
-}
-
-.form-floating>.form-control:not(:-ms-input-placeholder),
-.form-floating>.dataTable-input:not(:-ms-input-placeholder) {
-    padding-top: 1.625rem;
-    padding-bottom: 0.625rem;
 }
 
 .form-floating>.form-control:not(:-moz-placeholder-shown),
@@ -2969,18 +2899,6 @@ textarea.form-control-lg {
 .form-floating>.dataTable-selector {
     padding-top: 1.625rem;
     padding-bottom: 0.625rem;
-}
-
-.form-floating>.form-control:not(:-moz-placeholder-shown)~label,
-.form-floating>.dataTable-input:not(:-moz-placeholder-shown)~label {
-    opacity: 0.65;
-    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-}
-
-.form-floating>.form-control:not(:-ms-input-placeholder)~label,
-.form-floating>.dataTable-input:not(:-ms-input-placeholder)~label {
-    opacity: 0.65;
-    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 
 .form-floating>.form-control:not(:-moz-placeholder-shown)~label,
@@ -5554,7 +5472,8 @@ fieldset:disabled .btn {
     float: left;
     padding-right: 0.5rem;
     color: #6c757d;
-    content: var(--bs-breadcrumb-divider, "/");
+    content: var(--bs-breadcrumb-divider, "/")/* rtl: var(--bs-breadcrumb-divider, "/") */
+    ;
 }
 
 .breadcrumb-item.active {
@@ -6800,7 +6719,8 @@ fieldset:disabled .btn {
 .popover {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0/* rtl:ignore */
+    ;
     z-index: 1070;
     display: block;
     max-width: 276px;
@@ -7181,13 +7101,15 @@ fieldset:disabled .btn {
 
 @-webkit-keyframes spinner-border {
     to {
-        transform: rotate(360deg);
+        transform: rotate(360deg)/* rtl:ignore */
+        ;
     }
 }
 
 @keyframes spinner-border {
     to {
-        transform: rotate(360deg);
+        transform: rotate(360deg)/* rtl:ignore */
+        ;
     }
 }
 
@@ -11973,6 +11895,3 @@ body {
     font-size: 0.75rem;
     border-radius: 0.25rem !important;
 }
-
-
-/*# sourceMappingURL=main.css.map */

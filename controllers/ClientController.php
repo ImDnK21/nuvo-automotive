@@ -3,6 +3,7 @@ class ClientController{
     public function view(){
         utils::isAuth();
         require_once('views/client/viewClient.php');
+        require_once('views/layout/sidebarClient.php');
     }
 
     public function save() {

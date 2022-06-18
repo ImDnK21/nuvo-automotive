@@ -1,5 +1,8 @@
 <?php
 require_once('models/account.php');
+// require_once('views/layout/sidebar.php');
+// require_once('views/layout/sidebarClient.php');
+
 
 
 class AccountController {
@@ -82,6 +85,7 @@ class AccountController {
     public function profile() {
       Utils::isAuth();
       require_once('views/account/profile.php');
+      // require_once('views/account/sidebarClient.php');
       Utils::title('Perfil');
     }
 
