@@ -101,6 +101,12 @@ public function save(){
     return $result;   
 }
 
+public function totalMechanics(){
+    $query = "SELECT COUNT(*) AS total FROM MECHANIC";
+    $total = $this->db->query($query);
+    return $total->fetch_object()->total;
+  }
+
 /**
    * It updates a mechanic's information in the database.
    * Rut is the primary key. Can't be updated or modified.
