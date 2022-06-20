@@ -2,8 +2,11 @@
 class ClientController{
     public function view(){
         utils::isAuth();
-        require_once('views/client/viewClient.php');
         require_once('views/layout/sidebarClient.php');
+        $vehicle = new Vehicle();
+        var_dump($_SESSION['logged']);
+        // $vehicles = $vehicle->getByPatent($_SESSION['logged']->PATENT_VEHICLE);
+        require_once('views/client/viewClient.php');
     }
 
     public function save() {
@@ -17,12 +20,12 @@ class ClientController{
             $phone = isset($_POST['phone']) ? $_POST['phone'] : false;
             $email = isset($_POST['email']) ? $_POST['email'] : false;
 
-            if ($rut && $lastname && $firstname && $lastname && $second_lastname && $phone && $email) {
-                $client = new Client();
+            if ($rut && $lastname && $firstname && $lastname && $phone && $email) {
+                $client = new Account();
                 $client->setRut($rut);
+                $client->setRole('client');
                 $client->setFirstname($firstname);
                 $client->setLastname($lastname);
-                $client->setSecond_lastname($second_lastname);
                 $client->setPhone($phone);
                 $client->setEmail($email);
 

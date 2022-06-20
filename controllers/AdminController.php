@@ -11,11 +11,10 @@ class AdminController{
     */ 
     public function dashboard(){
         utils::isAdmin();
-        $cliente = new Client();
-        $clientes = $cliente->totalClient();
-        $mecanico = new Mechanic();
-        $mecanicos = $mecanico->totalMechanics();
-
+        // $cliente = new Client();
+        // $clientes = $cliente->totalClient();
+        // $mecanico = new Mechanic();
+        // $mecanicos = $mecanico->totalMechanics();
         require_once('views/layout/sidebar.php');
         require_once('views/admin/dashboard.php');
     }
@@ -27,8 +26,8 @@ class AdminController{
      */
     public function ViewListClient() {
         Utils::isAdmin();
-        $client = new Client();
-        $clients = $client->getAll();
+        $client = new Account();
+        $clients = $client->getAllClients();
         require_once('views/layout/sidebar.php');
         require_once('views/admin/client/ViewList.php');
     }
@@ -48,7 +47,7 @@ class AdminController{
     public function EditClient() {
         Utils::isAdmin();
         if (isset($_GET['rut']) && !empty($_GET['rut'])) {
-            $client = new Client();
+            $client = new Account();
             $client = $client->getByRut($_GET['rut']);
             require_once('views/layout/sidebar.php');
             require_once('views/admin/client/EditClient.php');
@@ -72,11 +71,11 @@ class AdminController{
             $commune = isset($_POST['commune']) ? trim($_POST['commune']) : false;
 
             if ($rut && $firstname && $lastname && $second_lastname && $phone && $email && $address && $commune) {
-                $client = new Client();
+                $client = new Account();
                 $client->setRut($_POST['rut']);
+                $client->setRole('client');
                 $client->setFirstname($_POST['firstname']);
                 $client->setLastname($_POST['lastname']);
-                $client->setSecond_lastname($_POST['second_lastname']);
                 $client->setPhone($_POST['phone']);
                 $client->setEmail($_POST['email']);
                 $client->setAddress($_POST['address']);
@@ -110,12 +109,11 @@ class AdminController{
             $address = isset($_POST['address']) ? trim($_POST['address']) : false;
             $commune = isset($_POST['commune']) ? trim($_POST['commune']) : false;
 
-            if ($rut && $firstname && $lastname && $second_lastname && $phone && $email && $address && $commune) {
-                $client = new Client();
+            if ($rut && $firstname && $lastname && $phone && $email && $address && $commune) {
+                $client = new Account();
                 $client->setRut($_POST['rut']);
                 $client->setFirstname($_POST['firstname']);
                 $client->setLastname($_POST['lastname']);
-                $client->setSecond_lastname($_POST['second_lastname']);
                 $client->setPhone($_POST['phone']);
                 $client->setEmail($_POST['email']);
                 $client->setAddress($_POST['address']);
@@ -124,7 +122,6 @@ class AdminController{
                 if ($client->update()) {
                     $_SESSION['saveClient'] = 'Se actualizó correctamente el cliente';
                 } else {
-                    // die('naonao');
                     $_SESSION['saveClient'] = 'Error al editar el cliente';
                 }
             } else {
@@ -142,7 +139,7 @@ class AdminController{
         Utils::isAdmin();
         if (isset($_GET['rut'])) {
             $rut = $_GET['rut'];
-            $client = new Client();
+            $client = new Account();
             $client->setRut($rut);
             if ($client->delete()) {
                 $_SESSION['saveClient'] = 'Se eliminó correctamente el cliente';
@@ -162,8 +159,8 @@ class AdminController{
     public function ViewListMechanic() {
         Utils::isAdmin();
 
-        $mechanic = new Mechanic();
-        $mechanics = $mechanic->getAll();
+        $mechanic = new Account();
+        $mechanics = $mechanic->getAllMechanics();
 
         require_once('views/layout/sidebar.php');
         require_once('views/admin/mechanic/ViewList.php');
@@ -190,7 +187,7 @@ class AdminController{
     public function EditMechanic(){
         Utils::isAdmin();
         if (isset($_GET['rut']) && !empty ($_GET['rut'])) {
-            $mechanic = new Mechanic();
+            $mechanic = new Account();
             $mechanic = $mechanic->getByRut($_GET['rut']);
             require_once('views/layout/sidebar.php');
             require_once('views/admin/mechanic/EditMechanic.php');
@@ -212,13 +209,13 @@ class AdminController{
 
 
             if ($rut && $firstname && $lastname && $phone && $email) {
-                $mechanic = new Mechanic();
+                $mechanic = new Account();
                 $mechanic->setRut($_POST['rut']);
+                $mechanic->setRole('mechanic');
                 $mechanic->setFirstname($_POST['firstname']);
                 $mechanic->setLastname($_POST['lastname']);
                 $mechanic->setPhone($_POST['phone']);
                 $mechanic->setEmail($_POST['email']);
-
 
                 if ($mechanic->save()) {
                     $_SESSION['saveMechanic'] = 'Se agregó correctamente el mecanico';

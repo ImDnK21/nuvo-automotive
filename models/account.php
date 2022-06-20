@@ -2,15 +2,17 @@
 class Account {
   private $db;
   private $id;
-  private $role;
   private $rut;
+  private $role;
   private $firstname;
   private $lastname;
+  private $phone;
+  private $address;
+  private $commune;
   private $email;
   private $password;
   private $created_at;
   private $updated_at;
-
 
   public function __construct() {
     $this->db = Database::connect();
@@ -34,6 +36,18 @@ class Account {
 
   public function getLastname() {
     return $this->lastname;
+  }
+
+  public function getPhone() {
+    return $this->phone;
+  }
+
+  public function getAddress() {
+    return $this->address;
+  }
+
+  public function getCommune() {
+    return $this->commune;
   }
 
   public function getEmail() {
@@ -71,6 +85,18 @@ class Account {
     $this->lastname = $this->db->escape_string($lastname);
   }
 
+  public function setPhone($phone) {
+    $this->phone = $this->db->escape_string($phone);
+  }
+
+  public function setAddress($address) {
+    $this->address = $this->db->escape_string($address);
+  }
+
+  public function setCommune($commune) {
+    $this->commune = $this->db->escape_string($commune);
+  }
+
   public function setEmail($email) {
     $this->email = $this->db->escape_string($email);
   }
@@ -86,10 +112,27 @@ class Account {
     $this->updated_at = $updated_at;
   }
 
+  public function getByRut($rut) {
+    $query = "SELECT * FROM user WHERE rut = '$rut'";
+    $result = $this->db->query($query);
+    $user = $result->fetch_object();
+  }
+
+  public function getAllMechanics() {
+    $query = "SELECT * FROM user WHERE role = 'mechanic'";
+    $mechanics = $this->db->query($query);
+    return $mechanics;
+  }
+
+  public function getAllClients() {
+    $query = "SELECT * FROM user WHERE role = 'client'";
+    $clients = $this->db->query($query);
+    return $clients;
+  }
 
   public function save() {
-    $query = "INSERT INTO USER (ID, RUT ,FIRSTNAME, LASTNAME, EMAIL, PASSWORD) VALUES ('{$this->getId()}','{$this->getRut()}', '{$this->getFirstname()}', '{$this->getLastname()}', '{$this->getEmail()}', '{$this->getPassword()}')";
-    // die($query);
+    $query = "INSERT INTO USER (RUT, ID_WORKORDER, ROLE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD) VALUES ('{$this->getRut()}', '{$this->getId()}', '{$this->getRole()}', '{$this->getFirstname()}', '{$this->getLastname()}', '{$this->getEmail()}', '{$this->getPassword()}')";
+    die($query);
     $save = $this->db->query($query);
     $result = false;
     if ($save) {
@@ -108,6 +151,16 @@ class Account {
     return $result;
   }
 
+  public function delete() {
+    $query = "DELETE FROM user WHERE RUT = '{$this->getRut()}'";
+    $delete = $this->db->query($query);
+    $result = false;
+    if ($delete) {
+      $result = true;
+    }
+    return $result;
+  }
+
   public function login() {
     $result = false;
     $email = $this->email;
@@ -119,7 +172,6 @@ class Account {
       $account = $login->fetch_object();
       if (password_verify($password, $account->PASSWORD)) {
         $result = $account;
-
       }
     }
     return $result;

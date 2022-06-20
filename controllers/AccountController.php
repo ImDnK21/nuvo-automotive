@@ -30,6 +30,7 @@ class AccountController {
           $account = new Account();
           $account->setId($id);
           $account->setRut($rut);
+          $account->setRole('client');
           $account->setFirstname($firstname);
           $account->setLastname($lastname);
           $account->setEmail($email);
@@ -68,10 +69,11 @@ class AccountController {
         if ($auth->ROLE == 'admin') {
           $_SESSION['admin'] = true;
           header('Location:' . APP_URL . 'admin/dashboard');
-        }else{
+        } elseif($auth->ROLE == 'client') { 
           header('Location:' . APP_URL . 'client/view');
+        } else {
+          header('Location:' . APP_URL);
         }
-
         
       } else {
         $_SESSION['login_message'] = 'Usuario o contraseña incorrectos';
@@ -85,7 +87,6 @@ class AccountController {
     public function profile() {
       Utils::isAuth();
       require_once('views/account/profile.php');
-      // require_once('views/account/sidebarClient.php');
       Utils::title('Perfil');
     }
 
