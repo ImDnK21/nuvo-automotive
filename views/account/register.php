@@ -4,11 +4,11 @@
         <h2>Registrarse</h2>
         <form action="<?= APP_URL . 'account/signup' ?>" method="POST">
             <div class="user-box">
-                <input type="text" name="email" required="">
+                <input type="text" name="id" required="">
                 <label>ID orden de trabajo</label>
             </div>
             <div class="user-box">
-                <input type="rut" name="text" required="">
+                <input type="text" name="rut" required="">
                 <label>Rut</label>
             </div>
             <div class="user-box">

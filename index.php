@@ -10,7 +10,7 @@ require_once('views/layout/navbar.php');
 
 
 if (isset($_GET['controller'])) {
-  $controllerName = $_GET['controller'] . 'Controller';
+  $controllerName = ucwords($_GET['controller']) . 'Controller';
 } elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
   $controllerName = CONTROLLER_DEFAULT;
 } else {

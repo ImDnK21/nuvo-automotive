@@ -12,7 +12,7 @@ if(!isset($_SESSION['logged'])):
       <button type="button" data-bs-dismiss="alert" aria-label="Cerrar" class="btn-close"></button>
     </div>
     <?php unset($_SESSION['login_message']); unset($_SESSION['login_message_type']); endif; ?>
-    <h2>Login</h2>
+    <h2>Iniciar Sesion</h2>
     <form action="<?= APP_URL . 'account/signin' ?>" method="POST">
       <div class="user-box">
         <input type="text" name="email" required="">
