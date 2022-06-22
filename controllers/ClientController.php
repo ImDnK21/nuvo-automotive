@@ -1,11 +1,28 @@
 <?php
 class ClientController{
+    /**
+     * If the user is authenticated, then require the viewClient.php file and the sidebarClient.php
+     * file.
+     */
     public function view(){
         utils::isAuth();
+        
         require_once('views/client/viewClient.php');
         require_once('views/layout/sidebarClient.php');
     }
 
+    /**
+     * If the form is submitted, then create a new client object, set the properties, and save it. 
+     * 
+     * If the form is not submitted, then display an error message. 
+     * 
+     * If the form is submitted, but the data is invalid, then display an error message. 
+     * 
+     * If the form is submitted, and the data is valid, then display a success message. 
+     * 
+     * If the form is submitted, and the data is valid, but the save fails, then display an error
+     * message.
+     */
     public function save() {
         Utils::isAdmin();
         if (isset($_POST)) {

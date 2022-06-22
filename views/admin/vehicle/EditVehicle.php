@@ -2,16 +2,15 @@
 <div class="container py-3">
     <div class="card">
         <div class="card-header">
-            <span class="fw-bold">Agregar Vehiculo</span>
+            <span class="fw-bold">Editar Vehiculo</span>
         </div>
         <div class="card-body">
             <form action="<?= APP_URL . 'admin/UpdateVehicle' ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
-
                     <div class="col-12 col-md-4">
                         <div class="mb-3">
                             <label for="patent" class="form-label required" >Patente</label>
-                            <input type="text" name="patent" value="<?=$vehicle->PATENT?>" readonly>
+                            <input type="text" name="patent" value="<?=$vehicle->PATENT?>" class="form-control" readonly>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">

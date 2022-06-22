@@ -49,13 +49,17 @@
                 </tr>
                 <div class="modal fade" id="deleteMechanic<?= str_replace(array(".", "-"), "", $mechanic->RUT) ?>" tabindex="-1" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title ">Eliminar Vehiculo</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <div class="modal-content">
+                      <div class="modal-header" style="color: red;">
+                        <h5 class=" modal-title fs-6 fw-bold">¿Estás seguro que deseas eliminar este Mecanico?</h5>
+                        <button type="button" data-bs-dismiss="modal" class="btn-close"></button>
                       </div>
-                      <div class="modal-body text-centered">
-                        <p>¿Estas Seguro que deseas eliminar el vehiculo <b><?=$mechanic->RUT ?> - <?=$mechanic->RUT?></b> Patente: <b><?=$mechanic->RUT ?></b>?</p>
+                      <div class="modal-body text-center">
+                        <b>RUT : <?= $mechanic->RUT ?></b>
+                        <br>
+                        <b>Nombre : <?= $mechanic->FIRSTNAME?> <?=$mechanic->LASTNAME?></b>
+                        <br>
+                        Una vez eliminado, no podrás recuperarlo.
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

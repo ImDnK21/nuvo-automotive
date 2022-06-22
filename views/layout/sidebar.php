@@ -20,7 +20,7 @@
                         <a class="nav-link" href="<?= APP_URL . 'admin/ViewListVehicle' ?>">Vehículos</a>
                     </nav>
                 </div>
-                <a class="nav-link" href="<?= APP_URL . 'admin/Supplies' ?>">
+                <a class="nav-link" href="<?= APP_URL . 'admin/Supply' ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Gestión de insumos
                 </a>

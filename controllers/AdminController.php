@@ -92,7 +92,7 @@ class AdminController{
                 $_SESSION['saveClient'] = 'Debes rellenar todos los campos';
             }
         }
-        header('Location:' . APP_URL . 'admin/ViewListClient');
+        // header('Location:' . APP_URL . 'admin/ViewListClient');
     }
 
     /**
@@ -435,10 +435,10 @@ class AdminController{
         require_once('views/admin/TodoList.php');
     }
 
-     public function  Supplies(){
+     public function  Supply(){
         Utils::isAdmin();
         require_once('views/layout/sidebar.php');
-        require_once('views/admin/supplies/index.php');
+        require_once('views/admin/supply/index.php');
     }
 
    

@@ -20,13 +20,16 @@
                 <label for="email" class="form-label">Apellido</label>
                 <input type="text" name="email" class="form-control" value="<?=$_SESSION['logged']->LASTNAME?>">
               </div>
+              <div>
                 <label for="email" class="form-label">Correo electrónico</label>
                 <input type="text" name="email" class="form-control" value="<?=$_SESSION['logged']->EMAIL?>">
               </div>
-
+              <div>
+              <button class="btn btn-primary float-end"><a href="<?= APP_URL . 'admin/dashboard' ?>"></a>Modificar Datos</button>
+              </div>
             </form>
           </div>
         </div>
-      </div>
+        <div>
     </div>
   </div>

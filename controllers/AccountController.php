@@ -11,9 +11,12 @@ class AccountController {
     Utils::title('Iniciar sesión');
   }
 
-  // public function register() {
-    // require_once('views/account/register.php');
-  // }
+  public function register (){
+    require_once('views/account/register.php');
+    Utils::title('Registrarse');
+  }
+
+
 
   public function signup() {
     if (isset($_POST) && !empty($_POST)) {

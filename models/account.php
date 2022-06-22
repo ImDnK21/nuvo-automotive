@@ -87,6 +87,7 @@ class Account {
   }
 
 
+  /* Saving the data into the database. */
   public function save() {
     $query = "INSERT INTO USER (ID, RUT ,FIRSTNAME, LASTNAME, EMAIL, PASSWORD) VALUES ('{$this->getId()}','{$this->getRut()}', '{$this->getFirstname()}', '{$this->getLastname()}', '{$this->getEmail()}', '{$this->getPassword()}')";
     // die($query);
@@ -98,6 +99,11 @@ class Account {
     return $result;
   }
 
+  /**
+   * It updates the user's information in the database
+   * 
+   * @return The result of the query.
+   */
   public function update(){
     $query = "UPDATE USER SET RUT = '{$this->getRut()}', FIRSTNAME = '{$this->getFirstname()}', LASTNAME = '{$this->getLastname()}', EMAIL = '{$this->getEmail()}', PASSWORD = '{$this->getPassword()}' WHERE ID = '{$this->getId()}'";
     $update = $this->db->query($query);
@@ -108,6 +114,13 @@ class Account {
     return $result;
   }
 
+  /**
+   * It takes the email and password from the form, queries the database for a user with that email,
+   * and if it finds one, it checks if the password matches the hashed password in the database. If it
+   * does, it returns the user object.
+   * 
+   * @return The result of the login function.
+   */
   public function login() {
     $result = false;
     $email = $this->email;

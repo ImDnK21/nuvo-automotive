@@ -61,6 +61,8 @@
                       <div class="modal-body text-center">
                         <b>RUT: <?= $client->RUT ?></b>
                         <br>
+                        <b>Nombre : <?= $client->FIRSTNAME?> <?=$client->LASTNAME?></b>
+                        <br>
                         Una vez eliminado, no podrás recuperarlo.
                       </div>
                       <div class="modal-footer">
