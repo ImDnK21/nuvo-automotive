@@ -118,6 +118,27 @@ End css profile
             font-family: "Poppins", sans-serif;
             color: #444444;
         }
+        /****
+        /****
+        /****
+            START FOOTER CSS
+        /****
+        /****
+        
+        
+
+
+        /****
+            END FOOTER CSS        /****
+        /****
+        */
+        /****
+        /****
+        /****
+            Login Y Register CSS
+        /****
+        /****
+        */
         
         .login-box {
             position: absolute;
@@ -280,6 +301,20 @@ End css profile
                 bottom: 100%;
             }
         }
+        /****
+        /****
+        /****
+            END Login Y Register CSS 
+        /****
+        /****
+        */
+        /****
+        /****
+        /****
+            START SUPPLY CATALOG CSS 
+        /****
+        /****
+        */
         
         a,
         a:hover {
@@ -459,6 +494,13 @@ End css profile
             background-color: #444444;
             transform: translateY(-50%);
         }
+        /****
+        /****
+        /****
+            END SUPPLY CATALOG CSS 
+        /****
+        /****
+        */
         
         h6,
         .h6,

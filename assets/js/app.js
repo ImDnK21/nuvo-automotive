@@ -1,3 +1,9 @@
+const toggleAccount = document.getElementById('toggle-account-form')
+const account = document.getElementById('account-form')
+
+
+
+
 window.addEventListener('DOMContentLoaded', event => {
     const sidebarToggle = document.body.querySelector('#sidebarToggle');
     if (sidebarToggle) {
@@ -31,3 +37,9 @@ $(document).ready(function() {
 });
 
 // JS DE PROFILE CLIENT
+
+if (toggleAccount) {
+    toggleAccount.addEventListener('click', () => {
+        account.classList.toggle('d-none')
+    })
+}

@@ -92,7 +92,7 @@ class AdminController{
                 $_SESSION['saveClient'] = 'Debes rellenar todos los campos';
             }
         }
-        // header('Location:' . APP_URL . 'admin/ViewListClient');
+        header('Location:' . APP_URL . 'admin/ViewListClient');
     }
 
     /**
@@ -439,6 +439,12 @@ class AdminController{
         Utils::isAdmin();
         require_once('views/layout/sidebar.php');
         require_once('views/admin/supply/index.php');
+    }
+
+    public function Service(){
+        Utils::isAdmin();
+        require_once('views/layout/sidebar.php');
+        require_once('views/admin/service/index.php');
     }
 
    

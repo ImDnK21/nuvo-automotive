@@ -104,12 +104,13 @@ class Account {
    * 
    * @return The result of the query.
    */
-  public function update(){
-    $query = "UPDATE USER SET RUT = '{$this->getRut()}', FIRSTNAME = '{$this->getFirstname()}', LASTNAME = '{$this->getLastname()}', EMAIL = '{$this->getEmail()}', PASSWORD = '{$this->getPassword()}' WHERE ID = '{$this->getId()}'";
+
+  public function update() {
+    $query = "UPDATE USER SET FIRSTNAME = '{$this->getFirstname()}', LASTNAME = '{$this->getLastname()}', EMAIL = '{$this->getEmail()}' WHERE id = {$this->id}";
     $update = $this->db->query($query);
     $result = false;
     if ($update) {
-      return true;
+      $result = true;
     }
     return $result;
   }

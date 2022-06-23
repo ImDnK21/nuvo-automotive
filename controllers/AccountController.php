@@ -92,31 +92,34 @@ class AccountController {
       Utils::title('Perfil');
     }
 
-    public function update(){
-      Utils::isAuth();
-      if (isset($_POST) && isset($_GET['id']) && !empty($_POST)) {
-        $firstname = isset($_POST['firstname']) ? ucwords(trim($_POST['firstname'])) : false;
-        $lastname = isset($_POST['lastname']) ? ucwords(trim($_POST['lastname'])) : false;
-        $email = isset($_POST['email']) ? trim($_POST['email']) : false;
 
-        if ($firstname && $lastname && $email) {
-          $account = new Account();
-          $account->setId($_GET['id']);
-          $account->setFirstname($firstname);
-          $account->setLastname($lastname);
-          $account->setEmail($email);
+  public function update() {
+    Utils::isAuth();
+    if (isset($_POST) && isset($_GET['id'])) {
+      $firstname = isset($_POST['firstname']) ? ucwords(trim($_POST['firstname'])) : false;
+      $lastname = isset($_POST['lastname']) ? ucwords(trim($_POST['lastname'])) : false;
+      $email = isset($_POST['email']) ? ucwords(trim($_POST['email'])) : false;
 
-          if ($account->update()) {
-            $_SESSION['profile_message'] = 'Perfil actualizado correctamente';
-            $_SESSION['profile_message_type'] = 'success';
-          } else {
-            $_SESSION['profile_message'] = 'Error al actualizar el perfil. Por favor intente nuevamente.';
-            $_SESSION['profile_message_type'] = 'warning';
-          }
+      if ($firstname && $lastname && $email) {
+        $account = new Account();
+        $account->setId($_GET['id']);
+        $account->setFirstname($firstname);
+        $account->setLastname($lastname);
+        $account->setEmail($email);
+
+        if ($account->update()) {
+          $_SESSION['profile'] = 'Perfil actualizado correctamente';
+          $_SESSION['logged']->firstname = $firstname;
+          $_SESSION['logged']->lastname = $lastname;
+          $_SESSION['logged']->phone = $email;
+        } else {
+          $_SESSION['profile'] = 'Error al actualizar el perfil. Por favor intente nuevamente.';
         }
+      }
     }
     header('Location:' . APP_URL . 'account/profile');
   }
+
 
   public function logout() {
     if (isset($_SESSION['logged'])) {
